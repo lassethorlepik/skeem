@@ -1,0 +1,54 @@
+<html height="100%">
+	<title style= "font-family: 'Open Sans'; text-align: center;">
+        text
+	</title>
+    <head>
+		<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+	</head>
+	<body height="100%">
+		<!-- now comes last image code -->
+		
+		<div id="suur">
+			<div class="hitbox" style="left:2%;top:2%;width:37%;height:81%;" onmouseenter="changeimg(1)" onmouseleave="changeimg(0)"></div>
+			<div class="hitbox" style="left:39%;top:2%;width:53%;height:32%;" onmouseenter="changeimg(2)" onmouseleave="changeimg(0)"></div>
+			<div class="hitbox" style="left:39%;top:34%;width:14%;height:10%;" onmouseenter="changeimg(2)" onmouseleave="changeimg(0)"></div>
+			<div class="hitbox" style="left:53%;top:34%;width:38%;height:30%;" onmouseenter="changeimg(3)" onmouseleave="changeimg(0)"></div>
+		</div>
+
+</body>
+<style>
+#suur {
+background-image: url("tekst0.png");
+background-size: contain;
+background-repeat: no-repeat;
+height:100vw;
+max-height:1300px;
+max-width:1300px;
+width:100vw;
+position: relative;
+}
+body {
+    font-family: 'Open Sans';font-size: 18px;
+	background-color:white;
+}
+.hitbox {
+  position: absolute;
+  z-index: 1;
+  width: 30%;
+  height: 9%;
+/*  
+outline: 2px dashed blue; */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+<script>
+var addid = 0;
+function changeimg(hoverid) {
+addid = 'tekst' + hoverid + '.png'
+document.getElementById("suur").style.backgroundImage = "url(" + addid + ")"
+}
+</script>
+</html>
