@@ -6,49 +6,107 @@
 		<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
 	</head>
 	<body height="100%">
-		<!-- now comes last image code -->
-		
 		<div id="suur">
-			<div class="hitbox" style="left:2%;top:2%;width:37%;height:81%;" onmouseenter="changeimg(1)" onmouseleave="changeimg(0)"></div>
-			<div class="hitbox" style="left:39%;top:2%;width:53%;height:32%;" onmouseenter="changeimg(2)" onmouseleave="changeimg(0)"></div>
-			<div class="hitbox" style="left:39%;top:34%;width:14%;height:10%;" onmouseenter="changeimg(2)" onmouseleave="changeimg(0)"></div>
-			<div class="hitbox" style="left:53%;top:34%;width:38%;height:30%;" onmouseenter="changeimg(3)" onmouseleave="changeimg(0)"></div>
-		</div>
+<div style='transform: scale(0.65); position: relative; top: -100px;'>
+  <br>
+  <h3 style="font-size:25px">Sul on tulemas raske eksam aines, mida sa väga hästi ei oska.
+Vastavalt sellele, missugune tunne sind valdab, saad leida sobiva lahenduse.</h3>
+  <p style="font-size:20px">Kliki valikul</p>
+  <hr />
 
+  <div id='block-11' style='padding: 10px;'>
+    <label for='option-11' style=' padding: 5px; font-size: 2.5rem;'>
+      <input type='radio' name='option' value='1' id='option-11' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+      A) Tunnen ärevust eksamiolukorra ees, kus pean suutma oma teadmisi näidata</label>
+    <span id='result-11'></span>
+  </div>
+  <hr />
+
+  <div id='block-12' style='padding: 10px;'>
+    <label for='option-12' style=' padding: 5px; font-size: 2.5rem;'>
+      <input type='radio' name='option' value='2' id='option-12' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+      B) Tunnen hirmu ebaõnnestumise ees, kardan, et ei saa hakkama</label>
+    <span id='result-12'></span>
+  </div>
+  <hr />
+
+  <div id='block-13' style='padding: 10px;'>
+    <label for='option-13' style=' padding: 5px; font-size: 2.5rem;'>
+      <input type='radio' name='option' value='3' id='option-13' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+      C) Usun, et kukun nagunii läbi</label>
+    <span id='result-13'></span>
+  </div>
+  <hr />
+
+  <button type='button' onclick='displayAnswer1()' style='width: 120px; height: 50px; border-radius: 3px; background-color: #AB0132;color: white; font-weight: 700;font-size: 20px;'>Vali</button>
+<div id="v">
+<p id="v1">Vali üks variant...<br><br><br><br><br><br><p>
+</div>
+</div>
+<a id='showanswer1'></a>
+		</div>
 </body>
 <style>
 #suur {
-background-image: url("tekst0.png");
-background-size: contain;
-background-repeat: no-repeat;
-height:95vw;
-max-height:1200px;
-max-width:1200px;
-width:95vw;
-position: relative;
+}
+#v1 {
+font-size:30px;
+}
+#v {
+padding:20px;
 }
 body {
     font-family: 'Open Sans';font-size: 18px;
 	background-color:white;
 }
-.hitbox {
-  position: absolute;
-  z-index: 1;
-  width: 30%;
-  height: 9%;
-/*  
-outline: 2px dashed blue; */
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
+/*   */
 </style>
 <script>
-var addid = 0;
-function changeimg(hoverid) {
-addid = 'tekst' + hoverid + '.png'
-document.getElementById("suur").style.backgroundImage = "url(" + addid + ")"
-}
+	  document.getElementById('block-11').style.border = '3px solid gray'
+	  document.getElementById('block-12').style.border = '3px solid gray'
+	  document.getElementById('block-13').style.border = '3px solid gray'
+	  document.getElementById('block-11').style.background = 'white'
+	  document.getElementById('block-12').style.background = 'white'
+	  document.getElementById('block-13').style.background = 'white'
+//    The function evaluates the answer and displays result
+  function displayAnswer1() {
+    if (document.getElementById('option-11').checked) {
+      document.getElementById('block-11').style.border = '3px solid #AB0132'
+	  document.getElementById('block-11').style.background = '#D59099'
+	  document.getElementById('block-12').style.background = 'white'
+	  document.getElementById('block-13').style.background = 'white'
+      document.getElementById('result-11').style.color = 'limegreen'
+	  document.getElementById('block-12').style.border = '3px solid gray'
+	  document.getElementById('block-13').style.border = '3px solid gray'
+	  document.getElementById("v1").innerHTML = "Siis proovi…<br>* hingamisharjutusi rahunemiseks<br>*positiivset enesesisendust, ütle endale näiteks: &quot;Saan hakkama,&quot; või: &quot;Kõik läheb hästi.&quot;<br><br><br>";
+	  showCorrectAnswer1()
+    }
+    if (document.getElementById('option-12').checked) {
+      document.getElementById('block-12').style.border = '3px solid #AB0132'
+	  document.getElementById('block-12').style.background = '#D59099'
+	  document.getElementById('block-11').style.background = 'white'
+	  document.getElementById('block-13').style.background = 'white'
+      document.getElementById('result-12').style.color = 'limegreen'
+	  document.getElementById('block-11').style.border = '3px solid gray'
+	  document.getElementById('block-13').style.border = '3px solid gray'
+	  document.getElementById("v1").innerHTML = "Siis…<br>* mõtle, kas oled valmistunud ja õppinud ehk kas sul on põhjust arvata, et sa päriselt ei saa hakkama<br>* vaata üle oma suhtumine ebaõnnestumisse: kas ebaõnnestumine näitab nõrkust või on hoopis viisend edasi arendada ja uuesti proovida? Keegi ei ole täiuslik!";
+      showCorrectAnswer1()
+    }
+    if (document.getElementById('option-13').checked) {
+      document.getElementById('block-13').style.border = '3px solid #AB0132'
+	  document.getElementById('block-13').style.background = '#D59099'
+	  document.getElementById('block-11').style.background = 'white'
+	  document.getElementById('block-12').style.background = 'white'
+      document.getElementById('result-13').style.color = 'limegreen'
+	  document.getElementById('block-11').style.border = '3px solid gray'
+	  document.getElementById('block-12').style.border = '3px solid gray'
+	  document.getElementById("v1").innerHTML = "Siis…<br>* mõtle järele, kas tegu on fakti või arvamusega.<br>Kui oled õppinud, siis on see hinnang ja ei pruugi päriselt juhtuda. <br> Hoia faktid ja hinnangud lahus.<br><br><br>";
+      showCorrectAnswer1()
+    }
+  }
+  // the functon displays the answer
+  function showCorrectAnswer1() {
+
+  }
 </script>
 </html>
